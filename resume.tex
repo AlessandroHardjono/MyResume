@@ -1,0 +1,158 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage[margin=1in]{geometry}
+    \usepackage{hyperref}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+% Setup background image
+
+
+% \usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}
+
+\geometry{left=2cm, top=2cm, right=2cm, bottom=1.5cm, footskip=.5cm}
+
+\usepackage[]{background} %pages=some
+\backgroundsetup{contents={\includegraphics[width=8cm]{scienceHeader.png}},scale=1.5,placement=top,opacity=1,position={7cm,1.1cm}}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-0pt}
+
+    
+
+%==== Profile ====%
+
+\vspace*{-4pt}
+\begin{center}
+	{\Huge \scshape {Alessandro Hardjono}}\\ 
+	\\
+% 	Vancouver, BC $\cdot$ \\
+	\href{mailto:alessandrohardjono@pm.me}{alessandrohardjono@pm.me} $\cdot$
+	+1 (778)-927-8974 $\cdot$
+	\href{https://www.github.com/AlessandroHardjono}{github.com/AlessandroHardjono} \\
+\end{center}
+
+%==== Education ====%
+\header{Education}
+\textbf{University of British Columbia}\hfill Vancouver, BC\\
+BSc Physics \hfill September 2016 - May 2021\\
+\vspace{2mm}
+
+%==== Experience ====%
+\header{Experience}
+\vspace{1mm}
+
+\textbf{\href{https://sailingrobots.ax/}{Åland Sailing Robots \textbar{} Högskolan på Åland}} \hfill Mariehamn, Åland Islands\\
+
+\textit{Software Engineer Intern} \hfill July 2018 | August 2018\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item A part of the Åland Sailing Robots team developing a fully robotic sailboat capable of performing marine research autonomously in the Åland Islands.
+	\item Developed a feature for the boat that tracks the power usage in the middle of it\textquotesingle{}s mission, and relay messages regarding its power balance between the solar panel and the hardware using C++.
+\end{itemize}
+\textbf{\href{https://www.ubcorbit.com/}{UBC Orbit}}\hfill Vancouver, BC\\
+\textit{Attitude Determination and Control Systems} \hfill September 2017 | Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Involved in UBC\textquotesingle{}s CSDC (Canadian Satellite Design Challenge) team, UBC Orbit. A part of the Attitude Determination and Control Systems team, involved in the development of custom Sun Sensors using MATLAB, Arduinos, Processing, etc..
+\end{itemize}
+\textbf{\href{https://ubcsailbot.org/}{UBC Sailbot}}\hfill Vancouver, BC\\
+\textit{Mechanical Team Member} \hfill September 2016 | September 2017\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Involved in the design and research of the hull of UBC Sailbot\textquotesingle{}s next project, Ada 2.0, bound to be the first autonomous sailing team to compete in the Vic-Maui yacht race in summer 2018.
+	\item Led and participated in educational outreach events and activities for secondary school students to get involved in science \& engineering.
+\end{itemize}
+
+\header{Skills}
+\begin{tabular}{ l 1 }
+	Programming Languages:  & C++, Python, Java\\
+	Technologies: & Linux, Git, LaTeX, Matlab, INO (Arduino)\\
+	Languages: & English, Indonesian \\
+\end{tabular}
+\vspace{2mm}
+
+\header{Projects}
+{\textbf{PowerTrackNode}} {\sl C++, sqlite3, Raspberry Pi} \\  \href {https://github.com/AlandSailingRobots}{github.com/AlandSailingRobots}\\
+A feature used in the Åland Sailing Robot to track the power usage during its mission. It accounts for the power usage from its actuators, CPU, and the power gained from its solar panels so that the user at base can be aware of its usage.\\
+\vspace*{2mm}
+
+{\textbf{Sun Sensor Development (UBC Orbit)}} {\sl Python, Processing, Matlab, INO (Arduino)} \\
+\href{https://github.com/UBCOrbit/ADCS}{github.com/UBCOrbit/ADCS} \\
+A software tool developed to imitate the sun sensor used in a satellite and determine its orientation relative to the Sun and the Earth. Performed experimental data using photodiodes manipulated with servos using Arduinos and Matlab to visualize gathered data.\\
+\vspace*{2mm}
+
+{\textbf{Mood Messages}} {\sl Google Cloud Platform, Twillio, HTML} \\ \href{https://github.com/AlessandroHardjono/moodmessagewebsite}{github.com/AlessandroHardjono/moodmessagewebsite}\\
+Software project developed at the UBC Local Hack Day 2017 Hackathon. Used to detect emotion in a social media status using Google Cloud Platfrom API and respond with a supportive message sent through an anonymous text message using Twillio\textquotesingle{}s cloud communication platforms.\\
+\vspace*{2mm}
+
+{\textbf{Finance Planner 5000}} {\sl Java}\hfill \\
+\href{https://github.com/AlessandroHardjono/FinancePlanner-5000}{github.com/AlessandroHardjono/FinancePlanner-5000}\\
+Coursework project that keeps track of the user's financial spendings. Features include adding balance, spending, using API to get currency exchange data, etc. Program contains a GUI using JSON and swing.\\
+\vspace*{2mm}
+
+
+
+\ 
+\end{document}
